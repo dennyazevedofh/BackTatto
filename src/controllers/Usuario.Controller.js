@@ -5,6 +5,7 @@ class UsuarioController {
         const { nome, email, senha } = req.body
         try {
             const usuario = await Usuario.create({ nome, email, senha })
+            console.log(usuario)
             return res.status(201).json(usuario)
         } catch (error) {
             return res.status(500).json({ error: 'Erro ao criar usuário' })
